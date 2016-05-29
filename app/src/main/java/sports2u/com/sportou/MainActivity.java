@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity
                 DataController.getInstance().setLoginStatus(false);
                 getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
                 recreate();
-                Toast.makeText(this, "Login successfully", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Logged out successfully", Toast.LENGTH_SHORT).show();
                 break;
         }
 
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity
         DataController.getInstance().setLoginStatus(true);
         getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
         recreate();
-        Toast.makeText(this, "Login successfully", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Logged in successfully", Toast.LENGTH_SHORT).show();
     }
 
     public void ShowInstructor(View view) {
@@ -127,11 +127,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void ShowSportsDialog(final View view) {
-        final CharSequence[] sports = {
-                "Badminton",
-                "Ping pong",
-                "Soccer"
-        };
+        final CharSequence[] sports = DataController.getSports();
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Select a sport");
         builder.setItems(sports, new DialogInterface.OnClickListener() {
@@ -143,4 +139,20 @@ public class MainActivity extends AppCompatActivity
         builder.show();
     }
 
+    public void ShowLocationDialog(final View view) {
+        final CharSequence[] locations = DataController.getLocations();
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Select a location");
+        builder.setItems(locations, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                ((EditText) view).setText(locations[i]);
+            }
+        });
+        builder.show();
+    }
+
+    public void GetGPSLocation(View view) {
+        ((EditText) findViewById(R.id.tbx_location)).setText("iCity");
+    }
 }

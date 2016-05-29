@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    tools:context="LoginFragment">
+    android:orientation="vertical" >
 
     <ImageView
         android:layout_marginTop="40dp"
@@ -13,7 +12,7 @@
         android:layout_marginRight="20dp"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:src="@android:drawable/btn_star_big_on" />
+        android:src="@drawable/logo" />
 
     <EditText
         android:id="@+id/tbx_sport"
@@ -24,6 +23,7 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:onClick="ShowSportsDialog"
+        android:editable="false"
         android:hint="Sports"/>
 
     <LinearLayout
@@ -42,22 +42,46 @@
             android:layout_height="wrap_content"
             android:layout_weight="9"
             android:textAlignment="center"
+            android:onClick="ShowLocationDialog"
+            android:editable="false"
             android:hint="Location"/>
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_menu_compass"/>
+            android:onClick="GetGPSLocation"
+            android:src="@drawable/gps"/>
 
     </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/btn_search"
-        android:layout_width="60dp"
-        android:layout_height="40dp"
+    <LinearLayout
+        android:id="@+id/layout_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
-        android:layout_gravity="center"
+        android:gravity="center_vertical"
         android:background="?colorAccent"
-        android:src="@android:drawable/ic_menu_search"/>
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btn_search"
+            android:background="?colorAccent"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:src="@drawable/search"/>
+
+        <TextView
+            android:id="@+id/tbx_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:text="Search"/>
+
+    </LinearLayout>
 
 </LinearLayout>

@@ -10,77 +10,65 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:background="?colorAccent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@android:color/white"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                android:text="Sport Experience"/>
-
-        </LinearLayout>
+            android:gravity="center_horizontal"
+            android:textColor="@android:color/white"
+            android:background="@android:color/darker_gray"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:text="Sport Experience"/>
 
         <TextView
+            android:id="@+id/exp_sport"
             android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:layout_marginBottom="40dp"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:text="Playing badminton since age of 3"/>
 
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:background="?colorAccent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@android:color/white"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                android:text="Coaching Experience"/>
-
-        </LinearLayout>
+            android:gravity="center_horizontal"
+            android:textColor="@android:color/white"
+            android:background="@android:color/darker_gray"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:text="Coaching Experience"/>
 
         <TextView
+            android:id="@+id/exp_coach"
             android:layout_marginTop="15dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:layout_marginBottom="40dp"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:text="Coached for 20 years and have more than 100 students"/>
 
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="25dp"
+            android:textStyle="bold"
             android:gravity="center"
-            android:background="?colorAccent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@android:color/white"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                android:text="Past Students"/>
-
-        </LinearLayout>
+            android:background="@android:color/darker_gray"
+            android:text="Past Students"/>
 
         <TextView
+            android:id="@+id/exp_student"
             android:layout_marginTop="15dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_width="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="40dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:text="Lee Chong Han (Thomas Cup 2012, Runner-up)"/>

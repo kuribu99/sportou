@@ -10,49 +10,44 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:background="?colorAccent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@android:color/white"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                android:text="One-to-One Coaching"/>
-
-        </LinearLayout>
+            android:gravity="center_horizontal"
+            android:textColor="@android:color/white"
+            android:background="@android:color/darker_gray"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:text="One-to-One Coaching"/>
 
         <TextView
+            android:id="@+id/price_one"
             android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:layout_marginBottom="40dp"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:text="RM 100 per session (2 hour)"/>
 
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:background="?colorAccent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@android:color/white"
-                android:textSize="25dp"
-                android:textStyle="bold"
-                android:text="Group Coaching"/>
-
-        </LinearLayout>
+            android:gravity="center_horizontal"
+            android:textColor="@android:color/white"
+            android:background="@android:color/darker_gray"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:text="Group Coaching"/>
 
         <TextView
+            android:id="@+id/price_group"
             android:layout_marginTop="15dp"
-            android:layout_width="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="40dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:text="RM 50 per session (2 hour, 4 students)"/>

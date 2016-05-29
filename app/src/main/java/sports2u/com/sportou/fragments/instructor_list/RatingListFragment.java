@@ -1,11 +1,9 @@
 package sports2u.com.sportou.fragments.instructor_list;
 
 import android.content.Context;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.ListViewAutoScrollHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,21 +17,21 @@ import sports2u.com.sportou.R;
 import sports2u.com.sportou.fragments.CoachFragment;
 import sports2u.com.sportou.fragments.InstructorListFragment;
 
-public class DistanceListFragment extends Fragment implements CoachListAdapter.FilterCriteria {
+public class RatingListFragment extends Fragment implements CoachListAdapter.FilterCriteria {
 
     private OnFragmentInteractionListener mListener;
     private String type;
     private String location;
 
-    public DistanceListFragment() {
+    public RatingListFragment() {
         // Required empty public constructor
     }
 
-    public static DistanceListFragment newInstance(String type, String location) {
+    public static RatingListFragment newInstance(String type, String location) {
         Bundle bundle = new Bundle();
         bundle.putString(InstructorListFragment.TYPE, type);
         bundle.putString(InstructorListFragment.LOCATION, location);
-        DistanceListFragment fragment = new DistanceListFragment();
+        RatingListFragment fragment = new RatingListFragment();
         fragment.setArguments(bundle);
         return fragment;
     }
@@ -49,10 +47,10 @@ public class DistanceListFragment extends Fragment implements CoachListAdapter.F
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_distance_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_rating_list, container, false);
         final ListView listView = (ListView) view.findViewById(R.id.list_view);
         listView.setAdapter(new CoachListAdapter(
-                DataController.getInstance().getFilteredCoaches("distance", type, location),
+                DataController.getInstance().getFilteredCoaches("rating", type, location),
                 this.getContext(), this));
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -84,7 +82,7 @@ public class DistanceListFragment extends Fragment implements CoachListAdapter.F
 
     @Override
     public String getFilterCriteria(Coach coach) {
-        return "3.5km";
+        return String.format("%.1f/5", coach.getRating());
     }
 
     public interface OnFragmentInteractionListener {

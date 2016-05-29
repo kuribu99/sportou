@@ -4,11 +4,14 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.TextViewCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import sports2u.com.sportou.R;
 
@@ -34,20 +37,27 @@ public class MainFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_main, container, false);
-        ImageButton searchBtn = (ImageButton) view.findViewById(R.id.btn_search);
-        EditText tbxSport = (EditText) view.findViewById(R.id.tbx_sport);
-        EditText tbxLocation = (EditText) view.findViewById(R.id.tbx_location);
+        LinearLayout layoutSearch = (LinearLayout) view.findViewById(R.id.layout_search);
+        ImageButton btnSearch = (ImageButton) view.findViewById(R.id.btn_search);
+        TextView tbxSearch = (TextView) view.findViewById(R.id.tbx_search);
+        final EditText tbxSport = (EditText) view.findViewById(R.id.tbx_sport);
+        final EditText tbxLocation = (EditText) view.findViewById(R.id.tbx_location);
 
-        searchBtn.setOnClickListener(new View.OnClickListener() {
+        View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 getActivity().getSupportFragmentManager()
                         .beginTransaction()
                         .addToBackStack(null)
-                        .replace(R.id.fragment_holder, InstructorListFragment.newInstance())
+                        .replace(R.id.fragment_holder, InstructorListFragment.newInstance(tbxSport.getText().toString(), tbxLocation.getText().toString()))
                         .commit();
             }
-        });
+        };
+
+        layoutSearch.setOnClickListener(listener);
+        btnSearch.setOnClickListener(listener);
+        tbxSearch.setOnClickListener(listener);
+
         return view;
     }
 
