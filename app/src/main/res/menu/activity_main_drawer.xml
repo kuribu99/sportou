@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@android:drawable/ic_dialog_info"
+        android:title="Home" />
+
+    <item android:title="Account">
+        <menu>
+            <item
+                android:id="@+id/nav_login"
+                android:icon="@android:drawable/ic_dialog_info"
+                android:title="Login" />
+            <item
+                android:id="@+id/nav_register"
+                android:icon="@android:drawable/ic_dialog_info"
+                android:title="Register" />
+        </menu>
+    </item>
+    <item android:title="Others">
+        <menu>
+            <item
+                android:id="@+id/nav_contact"
+                android:icon="@android:drawable/ic_dialog_email"
+                android:title="Contact us" />
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@android:drawable/ic_menu_help"
+                android:title="About us" />
+        </menu>
+    </item>
+
+</menu>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@android:drawable/ic_dialog_info"
+        android:title="Home" />
+
+    <item android:title="Account">
+        <menu>
+            <item
+                android:id="@+id/nav_profile"
+                android:icon="@android:drawable/ic_dialog_info"
+                android:title="Profile" />
+            <item
+                android:id="@+id/nav_booking"
+                android:icon="@android:drawable/ic_dialog_info"
+                android:title="Booking Request" />
+            <item
+                android:id="@+id/nav_inbox"
+                android:icon="@android:drawable/ic_dialog_info"
+                android:title="Inbox" />
+            <item
+                android:id="@+id/nav_client"
+                android:icon="@android:drawable/ic_dialog_info"
+                android:title="Clients" />
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@android:drawable/ic_dialog_info"
+                android:title="Logout" />
+        </menu>
+    </item>
+    <item android:title="Others">
+        <menu>
+            <item
+                android:id="@+id/nav_contact"
+                android:icon="@android:drawable/ic_dialog_email"
+                android:title="Contact us" />
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@android:drawable/ic_menu_help"
+                android:title="About us" />
+        </menu>
+    </item>
+
+</menu>
